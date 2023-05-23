@@ -1,6 +1,9 @@
 package br.senai.sp.jandira.lionschool.gui
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -17,6 +20,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -48,6 +52,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+@SuppressLint("SuspiciousIndentation")
 @Composable
 fun InterfaceHome(){
     val phrase = stringResource(id = br.senai.sp.jandira.lionschool.R.string.title)
@@ -65,6 +70,19 @@ fun InterfaceHome(){
     var listCourses by remember {
         mutableStateOf(listOf<Course>())
     }
+
+
+    /******************************************************************
+     * O Context é uma classe que fornece acesso a recursos do sistema,
+     * como serviços, atividades e layouts.
+     *
+     * LocalContext é uma forma de armazenar o Context atual em um
+     * local acessível aos componentes Compose.
+     *
+     * current é uma propriedade estatica que retorna o contexto
+     * associado ao Compose. Isso é usado para abrir outra tela.
+     ********************************************************************/
+    var context = LocalContext.current
 
     val call = RetrofitFactory().getCharacterService().getCharacters()
     call.enqueue(object : Callback<CourseList> {
@@ -147,7 +165,13 @@ fun InterfaceHome(){
                                 top = 30.dp,
                                 start = 30.dp,
                                 end = 30.dp
-                            ),
+                            )
+                            .clickable {
+                                val openStudentsActivity =
+                                    Intent(context, StudentsActivity::class.java)
+                                    context.startActivity(openStudentsActivity)
+                                       Log.i("Lion Scholl" , it.sigla)
+                            },
                         shape = RoundedCornerShape(
                             topStart = 8.dp,
                             topEnd = 8.dp,
@@ -184,7 +208,9 @@ fun InterfaceHome(){
 
                             Spacer(modifier = Modifier.height(13.dp))
 
-                            Column(modifier = Modifier.fillMaxWidth(),
+                            Column(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalAlignment = Alignment.CenterHorizontally
                             ) {
                                 Text(text = it.nome,
                                     modifier = Modifier.padding(

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Lion School</string>
     <string name="title">Choose a course to manage</string>
+    <string name="title_activity_students">StudentsActivity</string>
+
+    <string name="student_activity_button_studing">Studing</string>
+    <string name="student_activity_button_studing_finish">Finish</string>
+
 </resources>
