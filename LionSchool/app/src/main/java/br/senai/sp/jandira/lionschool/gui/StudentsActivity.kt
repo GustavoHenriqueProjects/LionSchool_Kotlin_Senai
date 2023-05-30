@@ -250,7 +250,11 @@ fun InterfaceStudents(typeCourse: String?) {
                             .clickable {
                                      val openStudentGrades =
                                          Intent(context, StudentGradesActivity::class.java)
-                                openStudentGrades.putExtra("name_student", it.nome)
+                                openStudentGrades
+                                    .putExtra("name_student", it.nome)
+                                    .putExtra("photo_student", it.foto)
+                                    .putExtra("sexo", it.sexo)
+                                    .putExtra("registration", it.matricula)
                                 context.startActivity(openStudentGrades)
                             },
                         shape = RoundedCornerShape(8.dp)

@@ -9,4 +9,7 @@
 
 
     <string name="title_activity_student_grades">Status of student</string>
+    <string name="status_activity_student_grades_approved">Approved</string>
+    <string name="status_activity_student_grades_disapproved">Disapproved</string>
+    <string name="status_activity_student_grades_exam">Exam</string>
 </resources>
