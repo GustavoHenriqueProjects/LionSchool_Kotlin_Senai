@@ -3,7 +3,6 @@ package br.senai.sp.jandira.lionschool.gui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -169,7 +168,6 @@ fun InterfaceHome(){
                             .clickable {
                                 val openStudentsActivity =
                                     Intent(context, StudentsActivity::class.java)
-                                context.startActivity(openStudentsActivity)
                                 openStudentsActivity.putExtra("type_course", it.sigla)
                                 context.startActivity(openStudentsActivity)
                             },

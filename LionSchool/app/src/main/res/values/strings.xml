@@ -7,4 +7,6 @@
     <string name="student_activity_button_studing_finish">Finish</string>
     <string name="student_activity_button_Year">Year</string>
 
+
+    <string name="title_activity_student_grades">Status of student</string>
 </resources>
