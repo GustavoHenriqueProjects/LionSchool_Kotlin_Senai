@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.lionschool.gui.ui.theme
+package br.senai.sp.jandira.lionschool.theme
 
 import androidx.compose.ui.graphics.Color
 

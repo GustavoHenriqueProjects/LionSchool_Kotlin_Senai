@@ -169,8 +169,9 @@ fun InterfaceHome(){
                             .clickable {
                                 val openStudentsActivity =
                                     Intent(context, StudentsActivity::class.java)
-                                    context.startActivity(openStudentsActivity)
-                                       Log.i("Lion Scholl" , it.sigla)
+                                context.startActivity(openStudentsActivity)
+                                openStudentsActivity.putExtra("type_course", it.sigla)
+                                context.startActivity(openStudentsActivity)
                             },
                         shape = RoundedCornerShape(
                             topStart = 8.dp,
@@ -212,7 +213,8 @@ fun InterfaceHome(){
                                 modifier = Modifier.fillMaxWidth(),
                                 horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                Text(text = it.nome,
+                                Text(
+                                    text = it.nome,
                                     modifier = Modifier.padding(
                                         start = 20.dp,
                                         top = 10.dp),
@@ -228,5 +230,3 @@ fun InterfaceHome(){
         }
     }
 }
-
-
