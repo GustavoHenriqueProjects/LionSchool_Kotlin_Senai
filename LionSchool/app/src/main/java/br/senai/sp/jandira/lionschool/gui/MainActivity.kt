@@ -3,6 +3,7 @@ package br.senai.sp.jandira.lionschool.gui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -134,7 +135,11 @@ fun InterfaceHome(){
                 contentDescription = "Contacs",
                 modifier = Modifier
                     .size(40.dp)
-                    .clickable { }
+                    .clickable {
+                    val openContactsActivity =
+                        Intent(context, ContactsActivity::class.java)
+                    context.startActivity(openContactsActivity)
+                }
             )
         }
         Column(

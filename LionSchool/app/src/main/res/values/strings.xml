@@ -12,4 +12,10 @@
     <string name="status_activity_student_grades_approved">Approved</string>
     <string name="status_activity_student_grades_disapproved">Disapproved</string>
     <string name="status_activity_student_grades_exam">Exam</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+
+    <string name="contacts_activity_contacts">Contacts:</string>
+    <string name="contacts_activity_phone">(11) 4774-4700</string>
+    <string name="contacts_activity_email">lionschool@gmail.com</string>
+    <string name="contacts_activity_adress">Rua tcc, 211,  Centro, Jandira</string>
 </resources>
