@@ -282,6 +282,7 @@ fun InterfaceGradesStudent(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(top = 10.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
 
@@ -290,19 +291,19 @@ fun InterfaceGradesStudent(
 
                     aluno.disciplinas.forEach { carga ->
                         Text(
-                            text = carga.carga,
+                            text = "${carga.carga} h",
                             modifier = Modifier.padding(start = 30.dp, end = 4.dp),
-                            fontSize = 20.sp,
+                            fontSize = 17.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White
                         )
-                        Spacer(modifier = Modifier.width(39.dp))
+                        Spacer(modifier = Modifier.width(27.dp))
                     }
                 }
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 5.dp)
+                        .padding(start = 5.dp, top = 10.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
                     verticalAlignment = Alignment.Bottom
@@ -330,6 +331,7 @@ fun InterfaceGradesStudent(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(top = 13.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
                     verticalAlignment = Alignment.Bottom
@@ -337,8 +339,8 @@ fun InterfaceGradesStudent(
                     aluno.disciplinas.forEach { sigla ->
                         Box(
                             modifier = Modifier
-                                .padding(start = 30.dp, top = 5.dp)
-                                .rotate(-45f)
+                                .padding(start = 29.dp, top = 13.dp)
+                                .rotate(-50f)
                         ) {
                             Text(
                                 text = sigla.nome,
@@ -348,7 +350,7 @@ fun InterfaceGradesStudent(
                                 color = Color(0XFF1BE930)
                             )
                         }
-                        Spacer(modifier = Modifier.width(36.dp))
+                        Spacer(modifier = Modifier.width(35.dp))
                     }
                 }
             }

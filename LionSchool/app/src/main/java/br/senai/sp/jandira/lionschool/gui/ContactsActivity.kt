@@ -148,7 +148,7 @@ fun InterfaceContacts(){
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 10.dp),
+                        .padding(top = 22.dp),
                     horizontalArrangement = Arrangement.SpaceAround
                 ) {
                     Image(
@@ -176,7 +176,7 @@ fun InterfaceContacts(){
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
-                            top = 10.dp,
+                            top = 23.dp,
                             start = 20.dp
                         )
                 ) {

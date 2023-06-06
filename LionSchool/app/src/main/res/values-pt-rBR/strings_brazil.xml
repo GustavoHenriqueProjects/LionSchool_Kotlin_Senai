@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lion School</string>
+    <string name="title">Escolha um curso para administrar</string>
+    <string name="title_activity_students">StudentsActivity</string>
+
+    <string name="student_activity_button_studing">Estudando</string>
+    <string name="student_activity_button_studing_finish">Finalizado</string>
+    <string name="student_activity_button_Year">Ano</string>
+
+    <string name="title_activity_student_grades">Status dos estudantes</string>
+    <string name="status_activity_student_grades_approved">Aprovado</string>
+    <string name="status_activity_student_grades_disapproved">Disaprovado</string>
+    <string name="status_activity_student_grades_exam">Exame</string>
+    <string name="title_activity_contacts">Contatos</string>
+
+    <string name="contacts_activity_contacts">Contatos:</string>
+    <string name="contacts_activity_phone">(11) 4774-4700</string>
+    <string name="contacts_activity_email">lionschool@gmail.com</string>
+    <string name="contacts_activity_adress">Rua tcc, 211,  Centro, Jandira</string>
+    <string name="contacts_activity_title_social_media">Media social</string>
+    <string name="contacts_activity_title_version">Versão</string>
+    <string name="contacts_activity_version_number">13.3 (278579)</string>
+    <string name="contacts_activity_suport">Suporte</string>
+    <string name="contacts_activity_copyright">Copyright 2023 LionSchool de jandira</string>
+</resources>
