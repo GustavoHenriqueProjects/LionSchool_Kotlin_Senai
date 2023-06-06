@@ -66,10 +66,10 @@ fun InterfaceGradesStudent(
     sexo: String?
 ) {
 
-    val studentName = nameStudent ?: ""
-    val photo = photoStudent ?: ""
-    val registration = registrationStudent ?: ""
-    val sexo = sexo ?: ""
+    val studentName = nameStudent ?: "" //OU !! não será null
+    val photo = photoStudent ?: "" //OU !! não será null
+    val registration = registrationStudent ?: "" //OU !! não será null
+    val sexo = sexo ?: "" // OU !! não será null
     var graphicStudentList by remember {
         mutableStateOf(listOf<GraphicStudent>())
     }
@@ -186,7 +186,7 @@ fun InterfaceGradesStudent(
                                     .padding(
                                         top = 53.dp
                                     ),
-                                fontSize = 20.sp,
+                                fontSize = 19.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = Color(0XFF20007A)
                             )
@@ -282,7 +282,7 @@ fun InterfaceGradesStudent(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 10.dp)
+                        .padding(top = 19.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
 
@@ -303,7 +303,7 @@ fun InterfaceGradesStudent(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(start = 5.dp, top = 10.dp)
+                        .padding(start = 5.dp, top = 13.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
                     verticalAlignment = Alignment.Bottom
