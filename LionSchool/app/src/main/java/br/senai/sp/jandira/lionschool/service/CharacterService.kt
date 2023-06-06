@@ -1,6 +1,7 @@
 package br.senai.sp.jandira.lionschool.service
 
 import br.senai.sp.jandira.lionschool.model.CourseList
+import br.senai.sp.jandira.lionschool.model.GraphicStudentList
 import br.senai.sp.jandira.lionschool.model.StudentList
 import retrofit2.Call
 import retrofit2.http.GET
@@ -25,5 +26,9 @@ interface CharacterService {
 
     @GET("alunos/curso/rds/ano-finalizacao")
     fun getStudentsRdsByYear(@Query("ano") ano:String): Call<StudentList>
+
+    //https://lionschool.onrender.com/v1/lion-school/aluno/notas?nome=${name}
+    @GET("aluno/notas")
+    fun getGradesStudentsByName(@Query("nome") nome:String): Call<GraphicStudentList>
 
 }

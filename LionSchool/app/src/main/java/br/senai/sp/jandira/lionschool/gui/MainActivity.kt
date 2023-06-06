@@ -19,6 +19,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -136,10 +137,10 @@ fun InterfaceHome(){
                 modifier = Modifier
                     .size(40.dp)
                     .clickable {
-                    val openContactsActivity =
-                        Intent(context, ContactsActivity::class.java)
-                    context.startActivity(openContactsActivity)
-                }
+                        val openContactsActivity =
+                            Intent(context, ContactsActivity::class.java)
+                        context.startActivity(openContactsActivity)
+                    }
             )
         }
         Column(
@@ -176,6 +177,7 @@ fun InterfaceHome(){
                                 openStudentsActivity.putExtra("type_course", it.sigla)
                                 context.startActivity(openStudentsActivity)
                             },
+                        elevation = 8.dp,
                         shape = RoundedCornerShape(
                             topStart = 8.dp,
                             topEnd = 8.dp,
@@ -188,6 +190,15 @@ fun InterfaceHome(){
                                 .fillMaxSize()
                                 .background(
                                     color = Color(0XFF3347B0),
+                                )
+                                .shadow(
+                                    elevation = 8.dp,
+                                    shape = RoundedCornerShape(
+                                        topStart = 8.dp,
+                                        topEnd = 8.dp,
+                                        bottomStart = 8.dp,
+                                        bottomEnd = 9.dp
+                                    )
                                 ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {

@@ -248,8 +248,8 @@ fun InterfaceStudents(typeCourse: String?) {
                             .width(190.dp)
                             .height(270.dp)
                             .clickable {
-                                     val openStudentGrades =
-                                         Intent(context, StudentGradesActivity::class.java)
+                                val openStudentGrades =
+                                    Intent(context, StudentGradesActivity::class.java)
                                 openStudentGrades
                                     .putExtra("name_student", it.nome)
                                     .putExtra("photo_student", it.foto)
