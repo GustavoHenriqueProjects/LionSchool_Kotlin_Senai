@@ -66,7 +66,7 @@ fun InterfaceGradesStudent(
     sexo: String?
 ) {
 
-    val studentName = nameStudent ?: "" //OU !! não será null
+    val studentName = nameStudent ?: "" // ?: Se for null recebe "" OU !! não será null
     val photo = photoStudent ?: "" //OU !! não será null
     val registration = registrationStudent ?: "" //OU !! não será null
     val sexo = sexo ?: "" // OU !! não será null
