@@ -97,6 +97,7 @@ fun InterfaceStudents(typeCourse: String?) {
 
     val context = LocalContext.current
 
+    var colorColumn = Color.Black
     Column(
         modifier = Modifier
             .fillMaxSize()
