@@ -51,7 +51,8 @@ class StudentGradesActivity : ComponentActivity() {
                     val photoStudent = intent.getStringExtra("photo_student")
                     val registrationStudent = intent.getStringExtra("registration")
                     val sexo = intent.getStringExtra("sexo")
-                    InterfaceGradesStudent(nameStudent, photoStudent, registrationStudent, sexo)
+                    val typeCourse = intent.getStringExtra("typeCourse")
+                    InterfaceGradesStudent(nameStudent, photoStudent, registrationStudent, sexo, typeCourse)
                 }
             }
         }
@@ -63,7 +64,8 @@ fun InterfaceGradesStudent(
     nameStudent: String?,
     photoStudent: String?,
     registrationStudent: String?,
-    sexo: String?
+    sexo: String?,
+    typeCourse: String?
 ) {
 
     val studentName = nameStudent ?: "" // ?: Se for null recebe "" OU !! não será null
@@ -73,6 +75,9 @@ fun InterfaceGradesStudent(
     var graphicStudentList by remember {
         mutableStateOf(listOf<GraphicStudent>())
     }
+
+    var course = typeCourse!! // Naa null
+
 
     val call = RetrofitFactory().getCharacterService()
         .getGradesStudentsByName(studentName)
@@ -276,13 +281,13 @@ fun InterfaceGradesStudent(
                 .padding(30.dp)
                 .background(
                     color = Color(0XFF3347B0)
-                )
+                ), verticalArrangement = Arrangement.Center
         ) {
             items(graphicStudentList) { aluno ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(top = 19.dp)
+                        .padding(top = 13.dp)
                         .horizontalScroll(scrool),
                     horizontalArrangement = Arrangement.SpaceAround,
 
@@ -320,7 +325,7 @@ fun InterfaceGradesStudent(
                                 .width(70.dp)
                                 .padding(start = 5.dp)
                                 .background(color = backgroundColumn)
-                                .height((media.media.toFloat() * 2).dp)
+                                .height((media.media.toFloat() * 1.5).dp)
 
                         ) {
 
@@ -350,7 +355,11 @@ fun InterfaceGradesStudent(
                                 color = Color(0XFF1BE930)
                             )
                         }
-                        Spacer(modifier = Modifier.width(35.dp))
+                        if(course == "DS"){
+                            Spacer(modifier = Modifier.width(35.dp))
+                        }else if(typeCourse == "RDS"){
+                            Spacer(modifier = Modifier.width(25.dp))
+                        }
                     }
                 }
             }

@@ -255,6 +255,7 @@ fun InterfaceStudents(typeCourse: String?) {
                                     .putExtra("photo_student", it.foto)
                                     .putExtra("sexo", it.sexo)
                                     .putExtra("registration", it.matricula)
+                                    .putExtra("typeCourse", typeCourse)
                                 context.startActivity(openStudentGrades)
                             },
                         shape = RoundedCornerShape(8.dp)
