@@ -12,12 +12,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateListOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -97,10 +92,14 @@ fun InterfaceStudents(typeCourse: String?) {
 
     val context = LocalContext.current
 
+    //palavra-chave by é usada na declaração da variável colorColumn para delegar a responsabilidade de gerenciar o estado mutável para a função remember
+    var colorColumn by remember {
+        mutableStateOf(Color(0XFF121214))
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(color = Color.Black)
+            .background(colorColumn)
     ) {
         Row(
             modifier = Modifier
@@ -127,6 +126,9 @@ fun InterfaceStudents(typeCourse: String?) {
                                 // Tratar falha na requisição
                             }
                         })
+
+                        colorColumn = Color(0xFF47644A)
+
                     },
                     modifier = Modifier
                         .weight(1f)
@@ -159,6 +161,8 @@ fun InterfaceStudents(typeCourse: String?) {
                                 // Tratar falha na requisição
                             }
                         })
+
+                        colorColumn = Color(0xFF914E4A)
 
                     },
                     modifier = Modifier
@@ -211,6 +215,7 @@ fun InterfaceStudents(typeCourse: String?) {
                                 call.enqueue(object : Callback<StudentList> {
                                     override fun onResponse(call: Call<StudentList>, response: Response<StudentList>) {
                                         status = false
+                                        colorColumn = Color(0xFF87962D)
                                         listStudentYear = response.body()?.alunos!!
                                     }
 
@@ -262,7 +267,7 @@ fun InterfaceStudents(typeCourse: String?) {
                     ) {
                         Box(
                             modifier = Modifier
-                                .background(color = Color.Black)) {
+                                .background(color = colorColumn)) {
                             Image(
                                 painter = painterResource(id = R.drawable.background_students),
                                 contentDescription = "",
@@ -298,3 +303,4 @@ fun InterfaceStudents(typeCourse: String?) {
         }
     }
 }
+
